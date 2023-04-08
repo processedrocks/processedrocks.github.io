@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MenuData>
+	<MenuGroup>
+		<MenuItem Label="Home" ID="home" ClientSideOnClick="navigateTo('home.aspx?option=home');" />
+		<MenuItem Label="Build!" ClientSideOnClick="newLevel();" />
+		<MenuItem Label="Games" ClientSideOnClick="navigateTo('levels.aspx');" />
+		<MenuItem Label="Models" ClientSideOnClick="navigateTo('models.aspx');" />
+		<MenuItem Label="People" ClientSideOnClick="navigateTo('community.aspx');" />
+		<MenuItem Label="My Games" ID="MyLevels" ClientSideOnClick="navigateTo('home.aspx?option=levels');" />
+		<MenuItem Label="My Models" ID="MyModels" ClientSideOnClick="navigateTo('home.aspx?option=models');" />
+		<MenuItem Label="My Profile" ClientSideOnClick="navigateTo('home.aspx?option=profile');" />
+		<MenuItem Label="Forum" ClientSideOnClick="navigateTo('Forum/Default.aspx');" />
+		<MenuItem Label="Sign In" ID="SignIn" ClientSideOnClick="navigateTo('Login/Default.aspx');" />
+	</MenuGroup>
+</MenuData>

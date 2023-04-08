@@ -1,0 +1,15 @@
+<html>
+<head>
+<script type="text/javascript">
+function modifyParent() {
+  var parent = window.parent.document;
+  var levelPanel = parent.getElementById("LevelPanel");
+  levelPanel.style.display = "";
+  var navPanel = parent.getElementById("NavPanel");
+  navPanel.style.display = "none";
+}
+</script>
+</head>
+<body onload="modifyParent()">
+</body>
+</html>

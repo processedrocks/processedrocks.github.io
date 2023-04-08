@@ -1,0 +1,8 @@
+<html>
+<head>
+  <title>New Roblox Account</title>
+</head>
+<body>
+  <p>Copyright 2004 ROBLOX, Inc. Patents Pending</p>
+</body>
+</html>

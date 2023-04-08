@@ -1,0 +1,64 @@
+<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="oncontentready" ONEVENT="showImage()" />
+<PUBLIC:ATTACH EVENT="onmouseleave" ONEVENT="showImage()" />
+<PUBLIC:ATTACH EVENT="onmouseover" ONEVENT="mouseOver()" />
+<PUBLIC:ATTACH EVENT="onmousedown" ONEVENT="mouseDown()" />
+<PUBLIC:ATTACH EVENT="onmouseup" ONEVENT="showImage()" />
+<SCRIPT LANGUAGE="JScript">
+var state = "Neutral"
+
+function checkImage(imageSrc, good, bad) {
+    var img = new Image();
+    img.onload = good; 
+    img.onerror = bad;
+    img.src = imageSrc;
+}
+function showImage()
+{
+	var img = new Image();
+	element.style.background = "url('" + element.imageUrl + "')";
+	element.style.backgroundRepeat = 'no-repeat';
+	img.onload = function () {
+		
+		element.style.width = this.width;
+		element.style.height = this.height;
+	}
+	img.src = element.imageUrl;
+}
+function mouseLeave()
+{
+	element.style.background = "url('" + element.innerHTML.replace('_ovr.png','.png') + "')";
+	element.style.backgroundRepeat = 'no-repeat';
+	state = "Neutral";
+}
+function mouseOver()
+{
+	var d = element.imageUrl.replace('.PNG','.png')
+	
+	element.style.background = "url('" + d.replace('.png','_ovr.png') + "')";
+	element.style.backgroundRepeat = 'no-repeat';
+	state = "Over";
+}
+function mouseDown()
+{
+	var d = element.imageUrl.replace('.PNG','.png');
+	
+	checkImage(d.replace('.png','_dn.png'), function(){
+		element.style.background = "url('" + d.replace('.png','_dn.png') + "')";
+	},
+	function(){
+		element.style.background = "url('" + d + "')";
+	});
+	element.style.backgroundRepeat = 'no-repeat';
+	
+}
+function mouseUp()
+{
+	if (state == 'Neutral') {
+		showImage();
+	} else if (state == 'Over') {
+		mouseOver();
+	}
+}
+</SCRIPT>
+</PUBLIC:COMPONENT>

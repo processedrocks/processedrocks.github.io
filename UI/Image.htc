@@ -1,0 +1,9 @@
+<PUBLIC:COMPONENT>
+<PUBLIC:ATTACH EVENT="oncontentready" ONEVENT="showImage()" />
+<SCRIPT LANGUAGE="JScript">
+function showImage()
+{
+	element.innerHTML = "<img style='BORDER: 0px' src='" + element.imageUrl + "' />"
+}
+</SCRIPT>
+</PUBLIC:COMPONENT>
